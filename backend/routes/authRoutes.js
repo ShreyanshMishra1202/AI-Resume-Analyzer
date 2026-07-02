@@ -7,7 +7,7 @@ const protect = require("../middleware/authMiddleware");
 const router = express.Router();
 
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET || "mysecretkey", {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: "7d"
   });
 };
